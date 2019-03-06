@@ -51,13 +51,13 @@ class Form(QtWidgets.QDialog):
         self.widgets = [
             self.ui.pushButton_prev,
             self.ui.pushButton_next,
-            self.ui.pushButton_add_class,
-            self.ui.pushButton_auto_track,
-            self.ui.pushButton_load,
-            self.ui.pushButton_save,
-            self.ui.pushButton_undo,
+            # self.ui.pushButton_add_class,
+            # self.ui.pushButton_auto_track,
+            # self.ui.pushButton_load,
+            # self.ui.pushButton_save,
+            # self.ui.pushButton_undo,
             self.ui.comboBox_class,
-            self.ui.comboBox_type,
+            # self.ui.comboBox_type,
             self.ui.horizontalSlider,
             self.ui.listWidget
         ]
@@ -138,12 +138,12 @@ class Form(QtWidgets.QDialog):
         self.ui.label.repaint()
 
     def mouseMoveEvent(self, me: QtGui.QMouseEvent):
-        # self.mouse_x = me.x() - self.ui.label.geometry().x()
-        # self.mouse_y = me.y() - self.ui.label.geometry().y()
-        # if 0 <= self.mouse_x < self.ui.label.geometry().width() and 0 <= self.mouse_y < self.ui.label.geometry().height():
-        #     self.ui.label_mouse_position.setText('{}/{}'.format(self.mouse_x, self.mouse_y))
-        #     self.update()
-        self.ui.label_mouse_position.setText('{}/{}'.format(self.ui.label.mouse_x, self.ui.label.mouse_y))
+        self.mouse_x = me.x() - self.ui.label.geometry().x()
+        self.mouse_y = me.y() - self.ui.label.geometry().y()
+        if 0 <= self.mouse_x < self.ui.label.geometry().width() and 0 <= self.mouse_y < self.ui.label.geometry().height():
+            self.ui.label_mouse_position.setText('{}/{}'.format(self.mouse_x, self.mouse_y))
+            self.update()
+        # self.ui.label_mouse_position.setText('{}/{}'.format(self.ui.label.mouse_x, self.ui.label.mouse_y))
 
     def mousePressEvent(self, me: QtGui.QMouseEvent):
         self.mouse_x = me.x() - self.ui.label.geometry().x()

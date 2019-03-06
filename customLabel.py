@@ -24,12 +24,12 @@ class customLabel(QtWidgets.QLabel):
             painter.drawPixmap(self.rect(), pixmap)
             if self.tags:
                 pen = QPen(QtCore.Qt.red)
-                pen.setWidth(5)
+                pen.setWidth(3)
                 painter.setPen(pen)
                 for tag in self.tags:
                     # painter.drawPoint(tag[1], tag[2])
                     painter.drawEllipse(QtCore.QPoint(tag[1], tag[2]), 1.5, 1.5)
 
-    def mouseMoveEvent(self, me: QtGui.QMouseEvent):
-        self.mouse_x = me.x()
-        self.mouse_y = me.y()
+    # def mouseMoveEvent(self, me: QtGui.QMouseEvent):
+    #     self.mouse_x = me.x()
+    #     self.mouse_y = me.y()
