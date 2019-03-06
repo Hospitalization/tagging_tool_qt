@@ -1,0 +1,7 @@
+{
+  "DEFAULT": {
+    "class": ["white", "yellow", "red", "corner"],
+    "type" : "point"
+  }
+
+}
