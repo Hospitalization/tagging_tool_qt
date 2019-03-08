@@ -157,11 +157,11 @@ class Form(QtWidgets.QDialog):
     def keyPressEvent(self, ke: QtGui.QKeyEvent):
         key = ke.key()
 
-        if key == QtCore.Qt.Key_Left:
+        if key == QtCore.Qt.Key_Left or key == QtCore.Qt.Key_Q:
             self.prev_frame()
-        elif key == QtCore.Qt.Key_Right:
+        elif key == QtCore.Qt.Key_Right or key == QtCore.Qt.Key_E:
             self.next_frame()
-        elif key == QtCore.Qt.Key_Delete:
+        elif key == QtCore.Qt.Key_Delete or key == QtCore.Qt.Key_D:
             idx = self.ui.listWidget.currentRow()
             if idx is not None and len(self.tag_list[self.current_frame]):
                 self.tag_list[self.current_frame].pop(idx)
